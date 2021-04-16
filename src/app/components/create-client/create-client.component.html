@@ -1,0 +1,34 @@
+<h3>Criar Cliente</h3>
+<div class="container">
+  <form (ngSubmit)="save()">
+    <div class="form-group">
+      <label for="inscricao">Inscrição</label>
+      <input type="text" class="form-control" id="subscription" required [(ngModel)]="client.subscription"
+        name="subscription">
+    </div>
+
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="client.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="apelido">Apelido</label>
+      <input type="text" class="form-control" id="nickname" required [(ngModel)]="client.nickname" name="nickname">
+    </div>
+
+    <div class="form-group">
+      <label style="width:100%">Status</label>
+      <p-dropdown [options]="status" [(ngModel)]="selectedStatus" [ngModelOptions]="{standalone: true}" optionLabel="label"></p-dropdown>
+    </div>
+    
+    <div class="form-group">
+      <label for="apelido">URL Foto</label>
+      <input type="text" class="form-control" id="urlPhoto" required [(ngModel)]="client.urlPhoto" name="urlPhoto">
+    </div>
+
+    <br>
+    <button [routerLink]="['/clients']" class="btn btn-primary">Voltar</button>
+    <button type="submit" class="btn btn-success" style="margin-left: 10px">Criar</button>
+  </form>
+</div>

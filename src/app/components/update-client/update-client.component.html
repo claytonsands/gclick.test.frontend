@@ -1,0 +1,33 @@
+<h3>Atualizar dados cliente</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Inscrição</label>
+      <input type="text" class="form-control" id="subscription" required [(ngModel)]="client.subscription"
+        name="subscription">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="client.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Apelido</label>
+      <input type="text" class="form-control" id="nickname" required [(ngModel)]="client.nickname" name="nickname">
+    </div>
+
+    <div class="form-group">
+      <label style="width:100%">Status</label>
+      <p-dropdown [options]="status" [(ngModel)]="selectedStatus" value="client.status" [ngModelOptions]="{standalone: true}" optionLabel="label"></p-dropdown>
+    </div>
+    
+    <div class="form-group">
+      <label for="urlPhoto">URL Foto</label>
+      <input type="text" class="form-control" id="urlPhoto" required [(ngModel)]="client.urlPhoto" name="urlPhoto">
+    </div>
+
+    <button (click)="backClientDetails()" class="btn btn-primary">Voltar</button>
+    <button type="submit" class="btn btn-success" style="margin-left: 10px">Atualizar</button>
+  </form>
+</div>
